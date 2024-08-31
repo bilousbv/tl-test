@@ -1,0 +1,205 @@
+@import "src/variables.scss";
+
+.deposit-modal {
+  padding: 1.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__title {
+      display: flex;
+      align-items: center;
+      color: var(--color-white);
+      font-size: 1rem;
+      padding: 0;
+
+      &__icon {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__close-btn {
+      color: var(--color-white);
+      font-size: 1.5rem;
+      opacity: .5;
+      padding: 0;
+    }
+  }
+
+  &__banner {
+    background-color: var(--color-blue);
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    color: var(--color-white);
+
+    &__label {
+      font-size: 0.875rem;
+      font-weight: 800;
+      line-height: 1.25rem;
+    }
+
+    &__value {
+      font-size: 1.125rem;
+      font-weight: 900;
+      line-height: 1.5rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &__dropdown {
+      width: 100%;
+
+      &__content {
+        align-items: center;
+        display: flex;
+        color: var(--color-white);
+        padding: 1rem;
+        background-color: var(--color-dark-gray);
+        box-shadow: 4px 4px 5px 0 rgba(var(--color-black-rgb), .5), -5px 0 5px 0 rgba(var(--color-black-rgb), .2);
+        gap: 0.75rem;
+        border-radius: 0.25rem;
+
+        &__image-box {
+          flex-basis: 3.5rem;
+          height: 1.75rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &__image {
+           max-width: 100%;
+           max-height: 100%;
+          }
+        }
+
+        &__text-box {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+
+        &__value {
+          font-size: 0.625rem;
+          font-weight: 800;
+          line-height: 0.875rem;
+
+          @media screen and (min-width: $screen-md){
+            font-size: 0.875rem;
+            line-height: 1.125rem;
+          }
+        }
+
+        &__description {
+          opacity: .5;
+          font-size: 0.375rem;
+          font-weight: 400;
+          line-height: 0.5rem;
+
+          @media screen and (min-width: $screen-md){
+            font-size: 0.75rem;
+            line-height: 1rem;
+          }
+        }
+
+        &__arrow {
+          font-size: 1.125rem;
+          margin-left: auto;
+        }
+      }
+
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &__image-box {
+          flex-basis: 3.5rem;
+          height: 1.75rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &__image {
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+
+        &__text-box {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          &__name {
+            font-size: 0.625rem;
+            font-weight: 800;
+            color: var(--color-white);
+
+            @media screen and (min-width: $screen-md){
+              font-size: 0.875rem;
+              line-height: 1.125rem;
+            }
+          }
+
+          &__commission {
+            opacity: .5;
+            font-size: 0.5rem;
+            font-weight: 400;
+            color: var(--color-white);
+
+            @media screen and (min-width: $screen-md){
+              font-size: 0.75rem;
+              line-height: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      &__title {
+        font-size: 1rem;
+        font-weight: 800;
+        line-height: 1.5rem;
+        text-align: center;
+      }
+
+      &__input {
+        text-align: center;
+        padding-inline: 0.625rem 1rem !important;
+      }
+
+      &__controls {
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        gap: 0.25rem;
+      }
+
+      &__hint {
+        font-size: 0.75rem;
+        font-weight: 500;
+        line-height: 1rem;
+        text-align: center;
+        opacity: .5;
+      }
+    }
+  }
+}

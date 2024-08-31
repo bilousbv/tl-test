@@ -1,0 +1,37 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  &__content {
+    display: none;
+    position: absolute;
+    background-color: var(--color-dark-gray);
+    min-width: 10rem;
+    max-height: 10rem;
+    box-shadow: 0 2px 7px 0 rgba(var(--color-black-rgb), .72);
+    z-index: 1;
+    border-radius: 0.25rem;
+    overflow: auto;
+    margin-top: 0.5rem;
+    width: 100%;
+
+    &__shown {
+      display: block;
+    }
+
+    &__item {
+      color: var(--color-white);
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+
+      &__active,
+      &:hover {
+        background-color: var(--color-dark);
+      }
+    }
+  }
+}

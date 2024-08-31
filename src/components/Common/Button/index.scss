@@ -1,0 +1,39 @@
+.btn {
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &-primary {
+    background-color: var(--color-red);
+    border-radius: 0.25rem;
+    padding: 0.625rem 1.625rem;
+    height: 2.5rem;
+  }
+
+  &-default {
+    background-color: var(--color-dark-gray);
+    border-radius: 0.25rem;
+  }
+
+  &-ghost {
+    background-color: transparent;
+
+    height: fit-content;
+  }
+
+  &:disabled {
+    color: var(--color-white);
+    opacity: .5;
+    pointer-events: none;
+    cursor: default;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

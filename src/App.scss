@@ -1,0 +1,104 @@
+@import "variables";
+
+:root,
+[data-theme='default'] {
+  color-scheme: light dark;
+  --color-dark: #20242A;
+  --color-dark-gray: #30363E;
+  --color-white: #ffffff;
+  --color-pink: #C68CFF;
+  --color-red: #F9484B;
+  --color-yellow: #E5AA11;
+  --color-blue: #2D69EB;
+  --color-light-blue: #4C84FF;
+  --color-dark-blue: #386DF8;
+  --color-green: #00C868;
+  --color-black-rgb: 0, 0, 0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Avenir, sans-serif ;
+  letter-spacing: 0;
+}
+
+.body-blocked {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  margin: auto;
+
+  @media screen and (min-width: $screen-md){
+    max-width: 720px;
+  }
+
+  @media screen and (min-width: $screen-lg){
+    max-width: 960px;
+  }
+
+  @media screen and (min-width: $screen-xl){
+    max-width: 1140px;
+  }
+
+  @media screen and (min-width: $screen-xxl){
+    max-width: 1320px;
+  }
+}
+
+.page-content {
+  width: 100%;
+  flex: 1;
+  padding: 1.5rem 1.25rem;
+
+  @media screen and (min-width: $screen-lg){
+    padding: 2rem 1.25rem;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 4.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 2rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  line-height: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+.notifications-list {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1000;
+  width: 25rem;
+  height: fit-content;
+
+  @media screen and (min-width: $screen-md){
+    left: auto;
+  }
+}

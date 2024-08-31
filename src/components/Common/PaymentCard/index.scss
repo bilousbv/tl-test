@@ -1,0 +1,72 @@
+@import "src/variables.scss";
+
+.payment-card {
+  background-color: var(--color-dark-gray);
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+
+  &__badge {
+    box-shadow: 0 4px 6px 0 rgba(var(--color-black-rgb), .15);
+    color: var(--color-white);
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    padding: 0.125rem 1.125rem;
+    border-radius: 0.125rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &-info {
+      background-color: var(--color-blue);
+    }
+
+    &-accent {
+      background-color: var(--color-red);
+    }
+  }
+
+  &__image {
+    height: 2rem;
+    margin-top: 0.5rem;
+    width: auto;
+    object-fit: scale-down;
+    aspect-ratio: 3 / 1;
+
+    @media screen and (min-width: $screen-xl){
+      height: 3rem;
+    }
+  }
+
+  &__text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__name {
+      font-size: 0.625rem;
+      font-weight: 800;
+      color: var(--color-white);
+
+      @media screen and (min-width: $screen-xl){
+        font-size: 0.875rem;
+      }
+    }
+
+    &__commission {
+      opacity: .5;
+      font-size: 0.5rem;
+      font-weight: 400;
+      color: var(--color-white);
+
+      @media screen and (min-width: $screen-xl){
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
