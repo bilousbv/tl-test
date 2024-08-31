@@ -1,4 +1,4 @@
-@import "src/variables.scss";
+@import 'src/variables.scss';
 
 .transactions {
   display: flex;
@@ -13,7 +13,7 @@
     &__desktop-title {
       display: none;
 
-      @media screen and (min-width: $screen-md){
+      @media screen and (min-width: $screen-md) {
         display: inline;
       }
     }
@@ -32,7 +32,7 @@
         position: absolute;
         right: 0;
         background-color: var(--color-dark-gray);
-        box-shadow: 0 2px 7px 0 rgba(var(--color-black-rgb), .72);
+        box-shadow: 0 2px 7px 0 rgba(var(--color-black-rgb), 0.72);
         z-index: 1;
         border-radius: 0.25rem;
         margin-top: 0.5rem;
@@ -73,7 +73,6 @@
       }
     }
   }
-
 
   &__button {
     width: min(100%, 17.5rem);

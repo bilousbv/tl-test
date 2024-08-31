@@ -12,13 +12,13 @@ interface INotificationComponent extends INotification {
 }
 
 const Notification: React.FC<INotificationComponent> = ({ title, message, type, handleClose }) => (
-    <div className={clsx('notification', `notification-${type}`)}>
-      <Button variant="ghost" className="notification__close-btn" onClick={handleClose}>
-        <CloseCircle/>
-      </Button>
-      {title && <h2 className="notification__title">{title}</h2>}
-      {message && <p className="notification__message">{message}</p>}
-    </div>
-  );
+  <div className={clsx('notification', `notification-${type}`)}>
+    <Button variant="ghost" className="notification__close-btn" onClick={handleClose}>
+      <CloseCircle />
+    </Button>
+    {title && <h2 className="notification__title">{title}</h2>}
+    {message && <p className="notification__message">{message}</p>}
+  </div>
+);
 
 export default Notification;

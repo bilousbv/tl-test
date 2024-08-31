@@ -8,17 +8,10 @@ interface ITextInput extends InputHTMLAttributes<HTMLInputElement> {
   inputClassName?: string;
 }
 
-const TextInput: React.FC<ITextInput> = ({
-  icon = undefined,
-  className,
-  inputClassName = undefined,
-  ...props
-}) => (
+const TextInput: React.FC<ITextInput> = ({ icon = undefined, className, inputClassName = undefined, ...props }) => (
   <div className={clsx('input-row', className)}>
     <input type="text" className={clsx('input-row__input', inputClassName)} {...props} />
-    <div className="input-row__icon">
-      {icon}
-    </div>
+    <div className="input-row__icon">{icon}</div>
   </div>
 );
 

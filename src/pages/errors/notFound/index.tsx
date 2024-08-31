@@ -2,7 +2,7 @@ import Layout from '../../../components/Layout/Simple';
 import Content from '../../../components/Pages/Errors/NotFound';
 import { displayName } from '../../../config';
 
-const NotFound= (): JSX.Element => {
+const NotFound = (): JSX.Element => {
   document.title = `${displayName}: Not Found`;
 
   return (

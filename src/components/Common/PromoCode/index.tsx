@@ -19,17 +19,17 @@ const PromoCode: React.FC<IPromoCode> = ({ title = undefined, description = unde
   const [isPromoCodeValid, setIsPromoCodeValid] = useState<boolean>(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPromoCode(event.target.value)
-  }
+    setPromoCode(event.target.value);
+  };
 
   const applyPromoCode = () => {
     if (promoCode.toLowerCase() === PROMO_CODE.toLowerCase()) {
-      openNotification({ message: 'Promo code was applied successfully', type: 'success'});
+      openNotification({ message: 'Promo code was applied successfully', type: 'success' });
       setIsPromoCodeValid(true);
     } else {
-      openNotification({ message: 'Promo code is invalid', type: 'error'});
+      openNotification({ message: 'Promo code is invalid', type: 'error' });
     }
-  }
+  };
 
   return (
     <div className="promo-code">
@@ -40,7 +40,7 @@ const PromoCode: React.FC<IPromoCode> = ({ title = undefined, description = unde
           onChange={handleChange}
           value={promoCode.toUpperCase()}
           className="promo-code__controls__input"
-          icon={isPromoCodeValid && <CheckCircle className="promo-code__controls__icon"/>}
+          icon={isPromoCodeValid && <CheckCircle className="promo-code__controls__icon" />}
         />
         <Button
           onClick={applyPromoCode}
@@ -53,6 +53,6 @@ const PromoCode: React.FC<IPromoCode> = ({ title = undefined, description = unde
       </div>
     </div>
   );
-}
+};
 
 export default PromoCode;

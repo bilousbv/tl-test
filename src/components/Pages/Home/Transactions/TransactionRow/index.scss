@@ -1,4 +1,4 @@
-@import "src/variables.scss";
+@import 'src/variables.scss';
 
 .transaction {
   display: flex;
@@ -12,7 +12,7 @@
     justify-content: flex-start;
     gap: 1rem;
     padding: 1.125rem;
-    border-bottom: 1px solid #1C1A1A;
+    border-bottom: 1px solid #1c1a1a;
   }
 
   &__group {
@@ -102,15 +102,15 @@
       line-height: 1rem;
 
       &__processing {
-        color: var(--color-yellow)
+        color: var(--color-yellow);
       }
 
       &__active {
-        color: var(--color-green)
+        color: var(--color-green);
       }
 
       &__performed {
-        color: var(--color-dark-blue)
+        color: var(--color-dark-blue);
       }
     }
   }

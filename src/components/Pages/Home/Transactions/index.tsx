@@ -22,7 +22,7 @@ const Transactions: React.FC = () => {
 
   const handleFiltersToggle = () => {
     setIsFiltersOpen((prev) => !prev);
-  }
+  };
 
   const handleSortChange = (sortField: string) => {
     setSort((prev) => {
@@ -32,43 +32,46 @@ const Transactions: React.FC = () => {
       return {
         field,
         direction,
-      }
-    })
-  }
+      };
+    });
+  };
 
-  const sortTransactions = ((a, b) => {
+  const sortTransactions = (a, b) => {
     if (!sort.field) {
-      return a.paymentDate > b.paymentDate ? -1 : 1
+      return a.paymentDate > b.paymentDate ? -1 : 1;
     }
 
-    if (a[sort.field] === b[sort.field]) return 0
+    if (a[sort.field] === b[sort.field]) return 0;
 
-    if (sort.direction === 'ASC')
-      return a[sort.field] > b[sort.field] ? -1 : 1
+    if (sort.direction === 'ASC') return a[sort.field] > b[sort.field] ? -1 : 1;
 
-    return a[sort.field] < b[sort.field] ? -1 : 1
-  });
+    return a[sort.field] < b[sort.field] ? -1 : 1;
+  };
 
-  const handleIcreasePageLimit = () => {
+  const handleIncreasePageLimit = () => {
     setPageLimit((prev) => prev + TRANSACTIONS_PAGE_LIMIT);
   };
 
   return (
     <div className="transactions">
       <div className="transactions__header">
-        <h2><span className="transactions__header__desktop-title">Last </span>Transactions</h2>
+        <h2>
+          <span className="transactions__header__desktop-title">Last </span>Transactions
+        </h2>
         <div className="transactions__header__filters">
           <Button
             className={clsx('transactions__header__filters__button', {
-              ['transactions__header__filters__button__active']: sort.field
+              ['transactions__header__filters__button__active']: sort.field,
             })}
             onClick={handleFiltersToggle}
           >
-            <Filter/>
+            <Filter />
           </Button>
-          <div className={clsx('transactions__header__filters__list', {
-            ['transactions__header__filters__list__open']: isFiltersOpen
-          })}>
+          <div
+            className={clsx('transactions__header__filters__list', {
+              ['transactions__header__filters__list__open']: isFiltersOpen,
+            })}
+          >
             {TRANSACTIONS_FILTERS.map((item) => (
               <Button
                 key={item.field}
@@ -77,10 +80,10 @@ const Transactions: React.FC = () => {
                 onClick={() => handleSortChange(item.field)}
               >
                 <span>{item.label}</span>
-                <ChevronDown className={clsx('transactions__header__filters__list__item__arrow',
-                  {
+                <ChevronDown
+                  className={clsx('transactions__header__filters__list__item__arrow', {
                     ['transactions__header__filters__list__item__arrow__shown']: sort.field === item.field,
-                    ['transactions__header__filters__list__item__arrow__rotated']: sort.direction === 'DESC'
+                    ['transactions__header__filters__list__item__arrow__rotated']: sort.direction === 'DESC',
                   })}
                 />
               </Button>
@@ -88,24 +91,18 @@ const Transactions: React.FC = () => {
           </div>
         </div>
       </div>
-      {TRANSACTIONS
-        .sort(sortTransactions)
+      {TRANSACTIONS.sort(sortTransactions)
         .filter((_, index) => index < pageLimit)
         .map((transaction) => (
-          <TransactionRow key={transaction.id} {...transaction}/>
-        ))
-      }
+          <TransactionRow key={transaction.id} {...transaction} />
+        ))}
       {TRANSACTIONS.length > pageLimit && (
-        <Button
-          variant="primary"
-          className="transactions__button"
-          onClick={handleIcreasePageLimit}
-        >
+        <Button variant="primary" className="transactions__button" onClick={handleIncreasePageLimit}>
           Show More
         </Button>
       )}
     </div>
   );
-}
+};
 
 export default Transactions;

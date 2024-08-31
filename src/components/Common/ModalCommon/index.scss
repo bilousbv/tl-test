@@ -1,8 +1,8 @@
-@import "src/variables.scss";
+@import 'src/variables.scss';
 
 .modal {
   position: fixed;
-  max-width: 45rem;
+  max-width: 40rem;
   width: 100%;
   top: 4rem;
   bottom: 0;
@@ -11,7 +11,7 @@
   overflow: auto;
   z-index: 500;
 
-  @media screen and (min-width: $screen-md){
+  @media screen and (min-width: $screen-md) {
     top: 50%;
     left: 50%;
     bottom: auto;
@@ -23,14 +23,14 @@
 .modal-substrate {
   display: none;
 
-  @media screen and (min-width: $screen-md){
+  @media screen and (min-width: $screen-md) {
     display: block;
     position: fixed;
     top: 5.25rem;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(var(--color-black-rgb), .8);
+    background-color: rgba(var(--color-black-rgb), 0.8);
     z-index: 499;
   }
 }

@@ -1,18 +1,18 @@
-@import "variables";
+@import 'variables';
 
 :root,
 [data-theme='default'] {
   color-scheme: light dark;
-  --color-dark: #20242A;
-  --color-dark-gray: #30363E;
+  --color-dark: #20242a;
+  --color-dark-gray: #30363e;
   --color-white: #ffffff;
-  --color-pink: #C68CFF;
-  --color-red: #F9484B;
-  --color-yellow: #E5AA11;
-  --color-blue: #2D69EB;
-  --color-light-blue: #4C84FF;
-  --color-dark-blue: #386DF8;
-  --color-green: #00C868;
+  --color-pink: #c68cff;
+  --color-red: #f9484b;
+  --color-yellow: #e5aa11;
+  --color-blue: #2d69eb;
+  --color-light-blue: #4c84ff;
+  --color-dark-blue: #386df8;
+  --color-green: #00c868;
   --color-black-rgb: 0, 0, 0;
 }
 
@@ -20,7 +20,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: Avenir, sans-serif ;
+  font-family: Avenir, sans-serif;
   letter-spacing: 0;
 }
 
@@ -35,19 +35,19 @@
   position: relative;
   margin: auto;
 
-  @media screen and (min-width: $screen-md){
+  @media screen and (min-width: $screen-md) {
     max-width: 720px;
   }
 
-  @media screen and (min-width: $screen-lg){
+  @media screen and (min-width: $screen-lg) {
     max-width: 960px;
   }
 
-  @media screen and (min-width: $screen-xl){
+  @media screen and (min-width: $screen-xl) {
     max-width: 1140px;
   }
 
-  @media screen and (min-width: $screen-xxl){
+  @media screen and (min-width: $screen-xxl) {
     max-width: 1320px;
   }
 }
@@ -57,7 +57,7 @@
   flex: 1;
   padding: 1.5rem 1.25rem;
 
-  @media screen and (min-width: $screen-lg){
+  @media screen and (min-width: $screen-lg) {
     padding: 2rem 1.25rem;
   }
 }
@@ -98,7 +98,7 @@ h4 {
   width: 25rem;
   height: fit-content;
 
-  @media screen and (min-width: $screen-md){
+  @media screen and (min-width: $screen-md) {
     left: auto;
   }
 }

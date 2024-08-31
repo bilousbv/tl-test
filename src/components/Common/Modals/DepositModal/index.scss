@@ -1,4 +1,4 @@
-@import "src/variables.scss";
+@import 'src/variables.scss';
 
 .deposit-modal {
   padding: 1.75rem 1rem;
@@ -6,10 +6,18 @@
   flex-direction: column;
   gap: 1rem;
 
+  @media screen and (min-width: $screen-md) {
+    padding: 1.75rem 0;
+  }
+
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (min-width: $screen-md) {
+      padding: 0 1rem;
+    }
 
     &__title {
       display: flex;
@@ -26,7 +34,7 @@
     &__close-btn {
       color: var(--color-white);
       font-size: 1.5rem;
-      opacity: .5;
+      opacity: 0.5;
       padding: 0;
     }
   }
@@ -40,6 +48,10 @@
     justify-content: center;
     gap: 0.25rem;
     color: var(--color-white);
+
+    @media screen and (min-width: $screen-md) {
+      border-radius: 0;
+    }
 
     &__label {
       font-size: 0.875rem;
@@ -59,6 +71,10 @@
     flex-direction: column;
     gap: 1.5rem;
 
+    @media screen and (min-width: $screen-md) {
+      padding: 0 1rem;
+    }
+
     &__dropdown {
       width: 100%;
 
@@ -68,7 +84,6 @@
         color: var(--color-white);
         padding: 1rem;
         background-color: var(--color-dark-gray);
-        box-shadow: 4px 4px 5px 0 rgba(var(--color-black-rgb), .5), -5px 0 5px 0 rgba(var(--color-black-rgb), .2);
         gap: 0.75rem;
         border-radius: 0.25rem;
 
@@ -80,8 +95,8 @@
           align-items: center;
 
           &__image {
-           max-width: 100%;
-           max-height: 100%;
+            max-width: 100%;
+            max-height: 100%;
           }
         }
 
@@ -96,19 +111,19 @@
           font-weight: 800;
           line-height: 0.875rem;
 
-          @media screen and (min-width: $screen-md){
+          @media screen and (min-width: $screen-md) {
             font-size: 0.875rem;
             line-height: 1.125rem;
           }
         }
 
         &__description {
-          opacity: .5;
+          opacity: 0.5;
           font-size: 0.375rem;
           font-weight: 400;
           line-height: 0.5rem;
 
-          @media screen and (min-width: $screen-md){
+          @media screen and (min-width: $screen-md) {
             font-size: 0.75rem;
             line-height: 1rem;
           }
@@ -148,19 +163,19 @@
             font-weight: 800;
             color: var(--color-white);
 
-            @media screen and (min-width: $screen-md){
+            @media screen and (min-width: $screen-md) {
               font-size: 0.875rem;
               line-height: 1.125rem;
             }
           }
 
           &__commission {
-            opacity: .5;
+            opacity: 0.5;
             font-size: 0.5rem;
             font-weight: 400;
             color: var(--color-white);
 
-            @media screen and (min-width: $screen-md){
+            @media screen and (min-width: $screen-md) {
               font-size: 0.75rem;
               line-height: 1rem;
             }
@@ -191,6 +206,14 @@
         align-items: center;
         justify-content: stretch;
         gap: 0.25rem;
+
+        @media screen and (min-width: $screen-md) {
+          gap: 1rem;
+        }
+
+        &__button {
+          flex: 1 1 auto;
+        }
       }
 
       &__hint {
@@ -198,7 +221,7 @@
         font-weight: 500;
         line-height: 1rem;
         text-align: center;
-        opacity: .5;
+        opacity: 0.5;
       }
     }
   }

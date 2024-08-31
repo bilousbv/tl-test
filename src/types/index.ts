@@ -36,7 +36,6 @@ export interface IRoute {
 
 export type PaymentMethodBadgeType = 'info' | 'accent';
 
-
 export interface IPaymentMethod {
   id: number;
   img: string;

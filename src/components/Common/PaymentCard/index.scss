@@ -1,4 +1,4 @@
-@import "src/variables.scss";
+@import 'src/variables.scss';
 
 .payment-card {
   background-color: var(--color-dark-gray);
@@ -11,7 +11,7 @@
   position: relative;
 
   &__badge {
-    box-shadow: 0 4px 6px 0 rgba(var(--color-black-rgb), .15);
+    box-shadow: 0 4px 6px 0 rgba(var(--color-black-rgb), 0.15);
     color: var(--color-white);
     font-size: 0.5rem;
     text-transform: uppercase;
@@ -38,7 +38,7 @@
     object-fit: scale-down;
     aspect-ratio: 3 / 1;
 
-    @media screen and (min-width: $screen-xl){
+    @media screen and (min-width: $screen-xl) {
       height: 3rem;
     }
   }
@@ -53,18 +53,18 @@
       font-weight: 800;
       color: var(--color-white);
 
-      @media screen and (min-width: $screen-xl){
+      @media screen and (min-width: $screen-xl) {
         font-size: 0.875rem;
       }
     }
 
     &__commission {
-      opacity: .5;
+      opacity: 0.5;
       font-size: 0.5rem;
       font-weight: 400;
       color: var(--color-white);
 
-      @media screen and (min-width: $screen-xl){
+      @media screen and (min-width: $screen-xl) {
         font-size: 0.75rem;
       }
     }

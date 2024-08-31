@@ -1,7 +1,7 @@
-@import "src/variables.scss";
+@import 'src/variables.scss';
 
 .header {
-  box-shadow: 0 2px 7px 0 rgba(var(--color-black-rgb), .72);
+  box-shadow: 0 2px 7px 0 rgba(var(--color-black-rgb), 0.72);
   padding-inline: 1.25rem;
   position: sticky;
   top: 0;
@@ -16,7 +16,7 @@
     padding-block: 1rem;
     height: 4rem;
 
-    @media screen and (min-width: $screen-md){
+    @media screen and (min-width: $screen-md) {
       height: 5.25rem;
     }
 
@@ -37,7 +37,7 @@
         color: var(--color-white);
         display: block;
 
-        @media screen and (min-width: $screen-md){
+        @media screen and (min-width: $screen-md) {
           font-size: 3rem;
         }
       }
@@ -94,7 +94,7 @@
     height: 100vh;
     overflow: hidden;
     z-index: 100;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     &__expanded {
       width: 100%;
@@ -107,10 +107,11 @@
       transform: translateX(-100%);
       background-color: var(--color-dark);
       padding: 1.25rem;
-      transition: all .3s ease-in-out;
+      transition: all 0.3s ease-in-out;
       display: flex;
       flex-direction: column;
       gap: 1.125rem;
+      z-index: 1;
 
       @media screen and (min-width: $screen-md) {
         max-width: 20rem;
@@ -131,7 +132,7 @@
           color: var(--color-white);
           display: block;
 
-          @media screen and (min-width: $screen-md){
+          @media screen and (min-width: $screen-md) {
             font-size: 3rem;
           }
         }
@@ -153,7 +154,7 @@
           color: var(--color-white);
 
           &__active {
-            color: var(--color-red)
+            color: var(--color-red);
           }
 
           &__link {
@@ -163,24 +164,22 @@
         }
       }
     }
-  }
 
-  &__substrate {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 100vh;
-    opacity: 0;
-    background-color: rgba(var(--color-black-rgb), .8);
-    z-index: 99;
-    transition: opacity .3s ease-in-out;
+    &__substrate {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 100vh;
+      opacity: 0;
+      background-color: rgba(var(--color-black-rgb), 0.8);
+      z-index: -1;
+      transition: opacity 0.3s ease-in-out;
 
-    &__expanded {
-      width: 100%;
-      opacity: 1;
+      &__expanded {
+        width: 100%;
+        opacity: 1;
+      }
     }
   }
 }
-
-

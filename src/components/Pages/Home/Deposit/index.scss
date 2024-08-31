@@ -1,4 +1,4 @@
-@import "src/variables.scss";
+@import 'src/variables.scss';
 
 .deposit {
   display: flex;
@@ -10,7 +10,7 @@
     flex-direction: column;
     gap: 1.5rem;
 
-    @media screen and (min-width: $screen-md){
+    @media screen and (min-width: $screen-md) {
       gap: 2rem;
     }
 
@@ -25,15 +25,15 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
 
-        @media screen and (min-width: $screen-sm){
+        @media screen and (min-width: $screen-sm) {
           grid-template-columns: repeat(3, 1fr);
         }
 
-        @media screen and (min-width: $screen-md){
+        @media screen and (min-width: $screen-md) {
           grid-template-columns: repeat(4, 1fr);
         }
 
-        @media screen and (min-width: $screen-lg){
+        @media screen and (min-width: $screen-lg) {
           grid-template-columns: repeat(6, 1fr);
         }
       }

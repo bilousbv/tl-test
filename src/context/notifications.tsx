@@ -11,7 +11,6 @@ interface NotificationsContext extends JsonResult {
   closeModal: () => void;
 }
 
-
 const defaultValue = {
   openNotification: () => undefined,
   openModal: () => undefined,
@@ -20,42 +19,38 @@ const defaultValue = {
 
 export const NotificationsContext = createContext<NotificationsContext>(defaultValue);
 
-
 const NotificationsProvider = ({ children }: PropsWithChildren) => {
   const [notifications, setNotifications] = useState<INotification[]>([]);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [modalContent, setModalContent] = useState<React.ReactNode | null>();
 
-
   const handleNotificationClose = (id?: string) => {
-    setNotifications((prev) => prev.filter(
-      (notification) => notification.id !== id)
-    )
-  }
+    setNotifications((prev) => prev.filter((notification) => notification.id !== id));
+  };
 
   const openNotification = (notification: INotification) => {
     if (!notification.title && !notification.message) return;
 
     const id = uuidv4();
 
-    setNotifications((prev) => [...prev, { id, ...notification}]);
+    setNotifications((prev) => [...prev, { id, ...notification }]);
 
     setTimeout(() => {
-      handleNotificationClose(id)
-    }, 3000)
+      handleNotificationClose(id);
+    }, 3000);
   };
 
   const openModal = (content: React.ReactNode) => {
     setModalContent(content);
     setIsModalOpen(true);
     document.body.classList.add('body-blocked');
-  }
+  };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setModalContent(null);
     document.body.classList.remove('body-blocked');
-  }
+  };
 
   return (
     <NotificationsContext.Provider

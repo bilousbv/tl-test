@@ -5,10 +5,11 @@ import { useContextNotifications } from '../../../../context/notifications.tsx';
 
 import './index.scss';
 import {
-  BALANCE_AMOUNT, DEPOSIT_INCREASE_STEPS,
+  BALANCE_AMOUNT,
+  DEPOSIT_INCREASE_STEPS,
   MAXIMUM_DEPOSIT_VALUE,
   MINIMUM_DEPOSIT_VALUE,
-  PAYMENT_METHODS
+  PAYMENT_METHODS,
 } from '../../../../contstants.ts';
 import Dropdown from '../../Dropdown';
 import { IPaymentMethod, OptionValueType } from '../../../../types';
@@ -26,13 +27,11 @@ const DepositModal: React.FC = () => {
       return (
         <div className="deposit-modal__content__dropdown__content">
           <div className="deposit-modal__content__dropdown__content__info">
-            <p className="deposit-modal__content__dropdown__content__value">
-              Payment Method is not defined
-            </p>
+            <p className="deposit-modal__content__dropdown__content__value">Payment Method is not defined</p>
           </div>
           <ChevronDown className="deposit-modal__content__dropdown__content__arrow" />
         </div>
-      )
+      );
     }
 
     return (
@@ -55,7 +54,7 @@ const DepositModal: React.FC = () => {
         <ChevronDown className="deposit-modal__content__dropdown__content__arrow" />
       </div>
     );
-  }
+  };
 
   const getPaymentMethodLabel = (paymentMethod: IPaymentMethod) => (
     <div key={paymentMethod.id} className="deposit-modal__content__dropdown__item">
@@ -67,15 +66,13 @@ const DepositModal: React.FC = () => {
         />
       </div>
       <div className="deposit-modal__content__dropdown__item__text-box">
-        <p className="deposit-modal__content__dropdown__item__text-box__name">
-          {paymentMethod.name}
-        </p>
+        <p className="deposit-modal__content__dropdown__item__text-box__name">{paymentMethod.name}</p>
         <p className="deposit-modal__content__dropdown__item__text-box__commission">
           Commission: {paymentMethod.commission}%
         </p>
       </div>
     </div>
-  )
+  );
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = parseInt(event.target.value.replace(/\D/m, ''), 10);
@@ -83,38 +80,38 @@ const DepositModal: React.FC = () => {
     if (Number.isNaN(newValue)) {
       setAmount(null);
     } else {
-      setAmount(newValue)
+      setAmount(newValue);
     }
-  }
+  };
 
   const handleInputBlur = () => {
     if (amount < MINIMUM_DEPOSIT_VALUE) {
-      openNotification({ message: `Amount should be more than ${MINIMUM_DEPOSIT_VALUE}$`, type: 'error'});
-      setAmount(MINIMUM_DEPOSIT_VALUE)
+      openNotification({ message: `Amount should be more than ${MINIMUM_DEPOSIT_VALUE}$`, type: 'error' });
+      setAmount(MINIMUM_DEPOSIT_VALUE);
     }
     if (amount > MAXIMUM_DEPOSIT_VALUE) {
-      openNotification({ message: `Amount should be less than ${MAXIMUM_DEPOSIT_VALUE}$`, type: 'error'});
-      setAmount(MAXIMUM_DEPOSIT_VALUE)
+      openNotification({ message: `Amount should be less than ${MAXIMUM_DEPOSIT_VALUE}$`, type: 'error' });
+      setAmount(MAXIMUM_DEPOSIT_VALUE);
     }
-  }
+  };
 
   const handleIncreaseAmount = (value: number) => {
     setAmount((prev) => {
       const newValue = prev + value;
 
       return newValue > MAXIMUM_DEPOSIT_VALUE ? MAXIMUM_DEPOSIT_VALUE : newValue;
-    })
-  }
+    });
+  };
 
   return (
     <div className="deposit-modal">
       <div className="deposit-modal__header">
         <Button variant="ghost" className="deposit-modal__header__title" onClick={closeModal}>
-          <ChevronLeft className="deposit-modal__header__title__icon"/>
+          <ChevronLeft className="deposit-modal__header__title__icon" />
           <h4>Back to Payment Method</h4>
         </Button>
         <Button variant="ghost" className="deposit-modal__header__close-btn" onClick={closeModal}>
-          <Close/>
+          <Close />
         </Button>
       </div>
       <div className="deposit-modal__banner">
@@ -127,34 +124,38 @@ const DepositModal: React.FC = () => {
           defaultValue={1}
           items={PAYMENT_METHODS.map((paymentMethod) => ({
             value: paymentMethod.id,
-            label: getPaymentMethodLabel(paymentMethod)
+            label: getPaymentMethodLabel(paymentMethod),
           }))}
-          labelRender={paymentMethodDropdownRender} />
-      </div>
-      <div className="deposit-modal__content__form">
-        <h4 className="deposit-modal__content__form__title">Amount</h4>
-        <TextInput
-          inputClassName="deposit-modal__content__form__input"
-          onChange={handleInputChange}
-          onBlur={handleInputBlur}
-          value={`$${amount || ''}`}
+          labelRender={paymentMethodDropdownRender}
         />
-        <div className="deposit-modal__content__form__controls">
-          {DEPOSIT_INCREASE_STEPS.map((step) => (
-            <Button
-              key={step}
-              onClick={() => handleIncreaseAmount(step)}
-            >
-              + ${step}
-            </Button>
-          ))}
+        <div className="deposit-modal__content__form">
+          <h4 className="deposit-modal__content__form__title">Amount</h4>
+          <TextInput
+            inputClassName="deposit-modal__content__form__input"
+            onChange={handleInputChange}
+            onBlur={handleInputBlur}
+            value={`$${amount || ''}`}
+          />
+          <div className="deposit-modal__content__form__controls">
+            {DEPOSIT_INCREASE_STEPS.map((step) => (
+              <Button
+                className="deposit-modal__content__form__controls__button"
+                key={step}
+                onClick={() => handleIncreaseAmount(step)}
+              >
+                + ${step}
+              </Button>
+            ))}
+          </div>
+          <p className="deposit-modal__content__form__hint">
+            From {MINIMUM_DEPOSIT_VALUE.toFixed(2)} to {MAXIMUM_DEPOSIT_VALUE.toFixed(2)} USD at a time
+          </p>
         </div>
-        <p className="deposit-modal__content__form__hint">
-          From {MINIMUM_DEPOSIT_VALUE.toFixed(2)} to {MAXIMUM_DEPOSIT_VALUE.toFixed(2)} USD at a time
-        </p>
+        <PromoCode title="Promo Code" />
+        <Button variant="primary" onClick={closeModal}>
+          Deposit
+        </Button>
       </div>
-      <PromoCode title="Promo Code" />
-      <Button variant="primary" onClick={closeModal}>Deposit</Button>
     </div>
   );
 };

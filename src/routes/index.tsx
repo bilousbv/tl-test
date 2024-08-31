@@ -30,11 +30,7 @@ const Route: React.FC = (): JSX.Element => {
     <BrowserRouter>
       <Routes>
         {routes.map((route) => (
-          <PublicRoute
-            key={route.bind.path}
-            element={route.bind.element}
-            path={route.bind.path}
-          />
+          <PublicRoute key={route.bind.path} element={route.bind.element} path={route.bind.path} />
         ))}
         <PublicRoute path="/" element={<Navigate to="/home" replace />} />
         <PublicRoute path="*" element={<Navigate to="/not-found" replace />} />

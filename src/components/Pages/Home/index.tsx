@@ -10,7 +10,7 @@ const Home: React.FC = () => (
   <div className="home-content">
     <Deposit />
     <PromoCode title="Have a Promo Code?" description="Enter promo code here. It will activate a special bonus!" />
-    <Transactions/>
+    <Transactions />
   </div>
 );
 

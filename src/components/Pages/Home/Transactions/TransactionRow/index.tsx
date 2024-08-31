@@ -7,18 +7,13 @@ import moment from 'moment-timezone';
 import { capitalize } from '../../../../../utils/text.ts';
 import { ITransaction } from '../../../../../types';
 
-const TransactionRow: React.FC<ITransaction> = ({id, paymentMethod, type, paymentDate, status, amount}) => (
+const TransactionRow: React.FC<ITransaction> = ({ id, paymentMethod, type, paymentDate, status, amount }) => (
   <div className="transaction">
     <div className="transaction__group">
       <img src={paymentMethod.img} alt={paymentMethod.name} className="transaction__group__image" />
     </div>
     <div className="transaction__group">
-      <p
-        className={clsx(
-          'transaction__group__status',
-          `transaction__group__status__${status}`
-        )}
-      >
+      <p className={clsx('transaction__group__status', `transaction__group__status__${status}`)}>
         {capitalize(status)}
       </p>
       <p className="transaction__group__label">Operation Status</p>

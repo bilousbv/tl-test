@@ -9,8 +9,10 @@ interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: VariantType;
 }
 
-const Button: React.FC<IButton> = ({ className, children, variant = 'default', ...props}) => (
-  <button {...props} className={`btn btn-${variant} ${className || ''}`} type="button">{children}</button>
+const Button: React.FC<IButton> = ({ className, children, variant = 'default', ...props }) => (
+  <button {...props} className={`btn btn-${variant} ${className || ''}`} type="button">
+    {children}
+  </button>
 );
 
 export default Button;

@@ -8,13 +8,11 @@ interface IMain {
   children: React.ReactNode;
 }
 
-const Main: React.FC<IMain> = ({ children}) => (
+const Main: React.FC<IMain> = ({ children }) => (
   <Simple>
     <Header />
     <div className="page-content">
-      <div className="container">
-        {children}
-      </div>
+      <div className="container">{children}</div>
     </div>
   </Simple>
 );

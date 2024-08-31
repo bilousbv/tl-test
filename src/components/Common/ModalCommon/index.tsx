@@ -10,14 +10,13 @@ interface IModalCommon {
   children: React.ReactNode;
 }
 
-const ModalCommon: React.FC<IModalCommon> = ({ isOpen, handleClose, children}) => isOpen ? (
+const ModalCommon: React.FC<IModalCommon> = ({ isOpen, handleClose, children }) =>
+  isOpen ? (
     <>
-      <div className="modal">
-        {children}
-      </div>
+      <div className="modal">{children}</div>
 
-      <div className="modal-substrate" onClick={handleClose}/>
+      <div className="modal-substrate" onClick={handleClose} />
     </>
-  ) : undefined
+  ) : undefined;
 
 export default ModalCommon;

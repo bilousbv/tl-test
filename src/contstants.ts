@@ -6,7 +6,7 @@ export const BALANCE_PERCENT = 13;
 export const MINIMUM_DEPOSIT_VALUE = 21;
 export const MAXIMUM_DEPOSIT_VALUE = 906;
 
-export const DEPOSIT_INCREASE_STEPS = [ 10, 20, 30, 50, 100];
+export const DEPOSIT_INCREASE_STEPS = [10, 20, 30, 50, 100];
 
 export const PROMO_CODE = 'ALPHA2021';
 
@@ -17,7 +17,7 @@ export const PAYMENT_METHODS: IPaymentMethod[] = [
     name: 'Mastercard',
     commission: 3,
     badge: 'Popular',
-    badgeType: 'info'
+    badgeType: 'info',
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ export const PAYMENT_METHODS: IPaymentMethod[] = [
     name: 'Visa',
     commission: 3,
     badge: 'Trusted',
-    badgeType: 'accent'
+    badgeType: 'accent',
   },
   {
     id: 3,
@@ -77,8 +77,8 @@ export const CRYPTO_PAYMENT_METHODS: IPaymentMethod[] = [
     img: '/src/assets/tether.png',
     name: 'USDT',
     commission: 0,
-  }
-]
+  },
+];
 
 export const TRANSACTIONS: ITransaction[] = [
   {
@@ -87,7 +87,7 @@ export const TRANSACTIONS: ITransaction[] = [
     type: 'withdraw',
     paymentDate: '2024-01-02T12:34:00Z',
     amount: 23.05,
-    status: 'processing'
+    status: 'processing',
   },
   {
     id: 142355,
@@ -95,7 +95,7 @@ export const TRANSACTIONS: ITransaction[] = [
     type: 'withdraw',
     paymentDate: '2024-12-05T15:40:00Z',
     amount: 123.27,
-    status: 'active'
+    status: 'active',
   },
   {
     id: 23561,
@@ -103,7 +103,7 @@ export const TRANSACTIONS: ITransaction[] = [
     type: 'withdraw',
     paymentDate: '2024-11-24T04:20:00Z',
     amount: 80,
-    status: 'performed'
+    status: 'performed',
   },
   {
     id: 2332,
@@ -111,7 +111,7 @@ export const TRANSACTIONS: ITransaction[] = [
     type: 'withdraw',
     paymentDate: '2024-03-24T04:20:00Z',
     amount: 21,
-    status: 'performed'
+    status: 'performed',
   },
   {
     id: 12332,
@@ -119,7 +119,7 @@ export const TRANSACTIONS: ITransaction[] = [
     type: 'withdraw',
     paymentDate: '2024-06-24T04:20:00Z',
     amount: 190,
-    status: 'active'
+    status: 'active',
   },
   {
     id: 552232,
@@ -127,7 +127,7 @@ export const TRANSACTIONS: ITransaction[] = [
     type: 'withdraw',
     paymentDate: '2024-08-24T04:20:00Z',
     amount: 900,
-    status: 'active'
+    status: 'active',
   },
   {
     id: 1552232,
@@ -135,7 +135,7 @@ export const TRANSACTIONS: ITransaction[] = [
     type: 'withdraw',
     paymentDate: '2024-10-24T04:20:00Z',
     amount: 500,
-    status: 'processing'
+    status: 'processing',
   },
 ];
 
@@ -155,7 +155,7 @@ export const TRANSACTIONS_FILTERS = [
   {
     field: 'status',
     label: 'Operation Status',
-  }
-]
+  },
+];
 
 export const TRANSACTIONS_PAGE_LIMIT = 3;
